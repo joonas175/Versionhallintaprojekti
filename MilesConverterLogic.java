@@ -3,11 +3,15 @@ class MilesConverterLogic {
     private float km;
 
     public MilesConverterLogic() {
-        
+
     }
 
-    public void setMiles(float m) {
-        this.miles = m;
+    public float convertMilesToKm(float m) {
+        return m*1.609344f;
+    }
+
+    public void setMiles(float mi) {
+        this.miles = mi;
     }
 
     public float getMiles() {
@@ -18,7 +22,7 @@ class MilesConverterLogic {
         this.km = k;
     }
 
-    public float setKm() {
+    public float getKm() {
         return this.km;
     }
 }
