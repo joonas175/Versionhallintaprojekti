@@ -2,6 +2,10 @@ class MilesConverterLogic {
     private float miles;
     private float km;
 
+    public MilesConverterLogic() {
+        
+    }
+
     public void setMiles(float m) {
         this.miles = m;
     }
