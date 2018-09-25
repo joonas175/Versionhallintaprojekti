@@ -4,7 +4,8 @@ class BmiLogic {
     private double height;
 
     public BmiLogic(double newWeight, double newHeight) {
-        
+        setHeight(newHeight);
+        setWeight(newWeight);
     }
 
     public double getWeigth(){
