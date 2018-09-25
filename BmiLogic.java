@@ -8,6 +8,13 @@ class BmiLogic {
         setWeight(newWeight);
     }
 
+    public String generateBMI(){
+        double result = 0;
+        result = this.weight / ((this.height/100) * (this.height/100));
+        result = (double) Math.round(result * 100) / 100;
+        return "" + result;
+    }
+
     public double getWeigth(){
         return this.weight;
     }
