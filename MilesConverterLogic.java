@@ -10,6 +10,10 @@ class MilesConverterLogic {
         return m*1.609344f;
     }
 
+    public float convertKmToMiles(float k) {
+        return k*0.621371f;
+    }
+
     public void setMiles(float mi) {
         this.miles = mi;
     }
