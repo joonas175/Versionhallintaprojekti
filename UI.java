@@ -4,7 +4,8 @@ import javafx.scene.Scene;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import java.awt.Button;
+import javafx.scene.control.Button;
+import javafx.scene.layout.GridPane;
 
 /* 
  *
@@ -13,12 +14,13 @@ import java.awt.Button;
 public class UI extends Application{
     
     @Override public void start(Stage stage) {
+        GridPane pane = new GridPane();
         Text text = new Text(10, 40, "Pick a feature");
         text.setFont(new Font(40));
         Button bmiButton = new Button("BMI Calculator");
-        Group group = new Group();
-        group.getChildren().add(text);
-        Scene scene = new Scene(group);
+        pane.add(text, 0, 0, 1, 1);
+        pane.add(bmiButton, 0, 1, 1, 1);
+        Scene scene = new Scene(pane, 400, 400);
         
 
         stage.setTitle("Welcome to JavaFX!"); 
