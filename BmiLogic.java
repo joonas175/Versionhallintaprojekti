@@ -16,6 +16,10 @@ class BmiLogic {
         return "" + result;
     }
 
+    public String getBmiValue() {
+        return this.BmiValue;
+    }
+
     public double getWeigth(){
         return this.weight;
     }
