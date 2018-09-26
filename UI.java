@@ -26,6 +26,7 @@ public class UI extends Application{
         pane.add(mileToKmButton, 0, 2, 1, 1);
         pane.setHalignment(bmiButton, HPos.CENTER);
         pane.setHalignment(mileToKmButton, HPos.CENTER);
+        pane.setVgap(20);
         Scene scene = new Scene(pane);
         
 
