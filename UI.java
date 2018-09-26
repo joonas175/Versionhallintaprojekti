@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.geometry.HPos;
+import javafx.geometry.Insets;
 /* 
  *
  *
@@ -27,6 +28,7 @@ public class UI extends Application{
         pane.setHalignment(bmiButton, HPos.CENTER);
         pane.setHalignment(mileToKmButton, HPos.CENTER);
         pane.setVgap(20);
+        pane.setPadding(new Insets(20));
         Scene scene = new Scene(pane);
         
 
