@@ -20,9 +20,12 @@ public class UI extends Application{
         text.setFont(new Font(40));
         text.setTextAlignment(TextAlignment.CENTER);
         Button bmiButton = new Button("BMI Calculator");
+        Button mileToKmButton = new Button("Miles to Kilometers converter");
         pane.add(text, 0, 0, 1, 1);
         pane.add(bmiButton, 0, 1, 1, 1);
+        pane.add(mileToKmButton, 0, 2, 1, 1);
         pane.setHalignment(bmiButton, HPos.CENTER);
+        pane.setHalignment(mileToKmButton, HPos.CENTER);
         Scene scene = new Scene(pane);
         
 
