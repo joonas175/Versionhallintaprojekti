@@ -2,6 +2,7 @@ class BmiLogic {
 
     private double weight;
     private double height;
+    private String BmiValue;
 
     public BmiLogic(double newWeight, double newHeight) {
         setHeight(newHeight);
