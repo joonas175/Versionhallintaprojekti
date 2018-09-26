@@ -20,6 +20,10 @@ class BmiLogic {
         return this.BmiValue;
     }
 
+    public void setBmiValue(String newBmi) {
+        this.BmiValue = new String(newBmi);
+    }
+
     public double getWeigth(){
         return this.weight;
     }
