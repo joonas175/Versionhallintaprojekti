@@ -32,7 +32,7 @@ public class UI extends Application{
         Scene scene = new Scene(pane);
         
 
-        stage.setTitle("Welcome to JavaFX!"); 
+        stage.setTitle("Multipurpose app"); 
         stage.setScene(scene); 
         stage.sizeToScene(); 
         stage.show(); 
