@@ -1,7 +1,7 @@
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-class BmiUi {
+class BmiUi extends Application{
 
     @Override
     public void start(Stage stage) {
