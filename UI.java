@@ -1,4 +1,6 @@
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.text.Font;
@@ -50,7 +52,20 @@ public class UI extends Application{
         text.setFont(new Font(40));
         text.setTextAlignment(TextAlignment.CENTER);
         Button bmiButton = new Button("BMI Calculator");
+        bmiButton.setOnAction(new EventHandler<ActionEvent>(){
+        
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("Test");
+            }
+        });
         Button mileToKmButton = new Button("Miles to Kilometers converter");
+        mileToKmButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("Test");
+            }
+        });
         pane.add(text, 0, 0, 1, 1);
         pane.add(bmiButton, 0, 1, 1, 1);
         pane.add(mileToKmButton, 0, 2, 1, 1);
