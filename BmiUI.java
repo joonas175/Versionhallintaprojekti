@@ -4,7 +4,11 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 
-class BmiUi extends Application{
+class BmiUI extends Application{
+
+    public BmiUI(String[] args) {
+        Application.launch(args);
+    }
 
     @Override
     public void start(Stage stage) {
@@ -20,9 +24,5 @@ class BmiUi extends Application{
     public void setPane(GridPane pane) {
         Button button = new Button("test");
         pane.add(button, 0, 0, 1, 1);
-    }
-
-    public static void main(String[] args){
-        Application.launch(args);
     }
 }
