@@ -9,11 +9,23 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-/* 
- *
+/** 
+ * Main menu of the application. 
+ * 
+ * This is the main menu of the application. It's start method is called by the Main class, which creates
+ * a new window.
+ * @author Joonas Salojärvi
+ * @version 2018.1001
  *
  */
 public class UI extends Application{
+
+    /**
+     * This method handles the construction of the window.
+     * 
+     * This method is the first on to be called in this class.
+     * @param stage Mandatory by Application-class
+     */
     
     @Override public void start(Stage stage) {
         GridPane pane = new GridPane();
@@ -26,6 +38,13 @@ public class UI extends Application{
         stage.show(); 
     }
 
+    /**
+     * Initializes the given GridPane.
+     * 
+     * Adds all needed elements, like buttons and text.
+     * 
+     * @param pane GridPane, where the elements will be added
+     */
     public static void initializePane(GridPane pane){
         Text text = new Text(10, 40, "Pick a feature");
         text.setFont(new Font(40));
