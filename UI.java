@@ -17,6 +17,16 @@ public class UI extends Application{
     
     @Override public void start(Stage stage) {
         GridPane pane = new GridPane();
+        initializePane(pane);
+        Scene scene = new Scene(pane);
+        
+        stage.setTitle("Multipurpose app"); 
+        stage.setScene(scene); 
+        stage.sizeToScene(); 
+        stage.show(); 
+    }
+
+    public static void initializePane(GridPane pane){
         Text text = new Text(10, 40, "Pick a feature");
         text.setFont(new Font(40));
         text.setTextAlignment(TextAlignment.CENTER);
@@ -29,13 +39,6 @@ public class UI extends Application{
         pane.setHalignment(mileToKmButton, HPos.CENTER);
         pane.setVgap(20);
         pane.setPadding(new Insets(20));
-        Scene scene = new Scene(pane);
-        
-
-        stage.setTitle("Multipurpose app"); 
-        stage.setScene(scene); 
-        stage.sizeToScene(); 
-        stage.show(); 
     }
 
     public static void main(String[] args){
