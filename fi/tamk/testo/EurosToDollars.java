@@ -12,7 +12,7 @@ public class EurosToDollars{
 
     public static void main(String... args){
         try{
-            test();
+            System.out.println(getCourse());
         } catch (IOException e){
             System.out.println(e);
         } 
@@ -23,18 +23,23 @@ public class EurosToDollars{
 
     }
 
-    public static void test() throws IOException, ProtocolException{
+    public static String getCourse() throws IOException, ProtocolException{
         
         URL yahoo = new URL("http://free.currencyconverterapi.com/api/v5/convert?q=EUR_USD&compact=y");
         URLConnection yc = yahoo.openConnection();
         BufferedReader in = new BufferedReader(
                                 new InputStreamReader(
                                 yc.getInputStream()));
-        String inputLine;
+        String inputLine = "";
 
-        while ((inputLine = in.readLine()) != null) 
-            System.out.println(inputLine);
+        while(in.ready()){
+            inputLine = in.readLine();
+        }
         in.close();
-        
+        return inputLine;
+    }
+
+    public static double parseDoubleFromJSON(String json){
+        return 0.0;
     }
 }
