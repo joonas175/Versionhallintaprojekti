@@ -25,11 +25,11 @@ public class EurosToDollars{
 
     public static String getCourse() throws IOException, ProtocolException{
         
-        URL yahoo = new URL("http://free.currencyconverterapi.com/api/v5/convert?q=EUR_USD&compact=y");
-        URLConnection yc = yahoo.openConnection();
+        URL converter = new URL("http://free.currencyconverterapi.com/api/v5/convert?q=EUR_USD&compact=y");
+        URLConnection convcConnection = converter.openConnection();
         BufferedReader in = new BufferedReader(
                                 new InputStreamReader(
-                                yc.getInputStream()));
+                                convcConnection.getInputStream()));
         String inputLine = "";
 
         while(in.ready()){
