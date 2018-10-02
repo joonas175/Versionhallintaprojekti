@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
+import fi.tamk.testo.EurosToDollars;
 /** 
  * Main menu of the application. 
  * 
