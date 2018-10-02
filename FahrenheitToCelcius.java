@@ -9,13 +9,11 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
+import javafx.scene.layout.ColumnConstraints;
 /** 
- * Main menu of the application. 
  * 
- * This is the main menu of the application. It's start method is called by the Main class, which creates
- * a new window.
- * @author Joonas Salojärvi
- * @version 2018.1001
+ * @author Anna Mälkiä
+ * @version 2018.1002
  *
  */
 public class FahrenheitToCelcius extends Application{
@@ -29,6 +27,10 @@ public class FahrenheitToCelcius extends Application{
     
     @Override public void start(Stage stage) {
         GridPane pane = new GridPane();
+        ColumnConstraints column1 = new ColumnConstraints(50);
+        ColumnConstraints column2 = new ColumnConstraints(325);
+        ColumnConstraints column3 = new ColumnConstraints(50);
+        pane.getColumnConstraints().addAll(column1, column2, column3);
         initializePane(pane);
         Scene scene = new Scene(pane);
         
@@ -47,21 +49,20 @@ public class FahrenheitToCelcius extends Application{
      */
     public static void initializePane(GridPane pane){
         Text calc = new Text(10, 40, "Calculate fahrenheits to celcius");
-        calc.setFont(new Font(40));
+        calc.setFont(new Font(30));
         calc.setTextAlignment(TextAlignment.CENTER);
-        Text fahren = new Text(10, 40, "Fahrenheit");
+        Text fahren = new Text(10, 40, "Fahrenheit:");
         fahren.setFont(new Font(20));
         fahren.setTextAlignment(TextAlignment.CENTER);
-        Text celci = new Text(10, 40, "Celcius");
+        Text celci = new Text(10, 40, "Celcius:");
         celci.setFont(new Font(20));
         celci.setTextAlignment(TextAlignment.CENTER);
         Button calculate = new Button("Calculate");
         pane.add(calc, 0, 0, 1, 1);
-        pane.add(fahren, 0, 1, 1, 1);
-        pane.add(celci, 0, 2, 1, 1);
-        pane.add(calculate, 0, 3, 1, 1);
-        pane.setHalignment(bmiButton, HPos.CENTER);
-        pane.setHalignment(mileToKmButton, HPos.CENTER);
+        pane.add(fahren, 1, 1, 1, 1);
+        pane.add(celci, 1, 2, 1, 1);
+        pane.add(calculate, 1, 3, 1, 1);
+        pane.setHalignment(calculate, HPos.CENTER);
         pane.setVgap(20);
         pane.setPadding(new Insets(20));
     }
