@@ -17,6 +17,10 @@ import javafx.scene.layout.ColumnConstraints;
  *
  */
 public class FahrenheitToCelcius extends Application{
+    String fahrenString;
+    String celciString;
+    int fahrenInt;
+    int celciInt;
 
     /**
      * This method handles the construction of the window.
