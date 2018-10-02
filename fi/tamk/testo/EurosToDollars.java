@@ -13,6 +13,7 @@ public class EurosToDollars{
     public static void main(String... args){
         try{
             System.out.println(getCourse());
+            System.out.println(parseDoubleFromJSON(getCourse()));
         } catch (IOException e){
             System.out.println(e);
         } 
@@ -40,6 +41,19 @@ public class EurosToDollars{
     }
 
     public static double parseDoubleFromJSON(String json){
-        return 0.0;
+        String tempString = json.replace("{", "");
+        tempString = tempString.replace("}", "");
+        tempString = tempString.replace("\"", "");
+        String[] temp = new String[tempString.split(":").length];
+        temp = tempString.split(":");
+        double returnVal = -1;
+        for(int i = 0; i < temp.length; i++){
+            try{
+                returnVal = Double.parseDouble(temp[i]);
+            } catch (Exception e){
+                
+            }
+        }
+        return returnVal;
     }
 }
