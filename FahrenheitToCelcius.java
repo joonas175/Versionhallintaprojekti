@@ -32,7 +32,7 @@ public class FahrenheitToCelcius extends Application{
         initializePane(pane);
         Scene scene = new Scene(pane);
         
-        stage.setTitle("Multipurpose app"); 
+        stage.setTitle("Fahrenheit to Celcius converter"); 
         stage.setScene(scene); 
         stage.sizeToScene(); 
         stage.show(); 
@@ -46,14 +46,20 @@ public class FahrenheitToCelcius extends Application{
      * @param pane GridPane, where the elements will be added
      */
     public static void initializePane(GridPane pane){
-        Text text = new Text(10, 40, "Pick a feature");
-        text.setFont(new Font(40));
-        text.setTextAlignment(TextAlignment.CENTER);
-        Button bmiButton = new Button("BMI Calculator");
-        Button mileToKmButton = new Button("Miles to Kilometers converter");
-        pane.add(text, 0, 0, 1, 1);
-        pane.add(bmiButton, 0, 1, 1, 1);
-        pane.add(mileToKmButton, 0, 2, 1, 1);
+        Text calc = new Text(10, 40, "Calculate fahrenheits to celcius");
+        calc.setFont(new Font(40));
+        calc.setTextAlignment(TextAlignment.CENTER);
+        Text fahren = new Text(10, 40, "Fahrenheit");
+        fahren.setFont(new Font(20));
+        fahren.setTextAlignment(TextAlignment.CENTER);
+        Text celci = new Text(10, 40, "Celcius");
+        celci.setFont(new Font(20));
+        celci.setTextAlignment(TextAlignment.CENTER);
+        Button calculate = new Button("Calculate");
+        pane.add(calc, 0, 0, 1, 1);
+        pane.add(fahren, 0, 1, 1, 1);
+        pane.add(celci, 0, 2, 1, 1);
+        pane.add(calculate, 0, 3, 1, 1);
         pane.setHalignment(bmiButton, HPos.CENTER);
         pane.setHalignment(mileToKmButton, HPos.CENTER);
         pane.setVgap(20);
