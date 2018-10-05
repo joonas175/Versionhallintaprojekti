@@ -12,8 +12,8 @@ public class EurosToDollars{
 
     public static void main(String... args){
         try{
-            System.out.println(getCourse());
-            System.out.println(parseDoubleFromJSON(getCourse()));
+            System.out.println(convertEURToUSD(50));
+            System.out.println(convertUSDToEUR(50));
         } catch (IOException e){
             System.out.println(e);
         } 
