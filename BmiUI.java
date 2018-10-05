@@ -14,9 +14,9 @@ class BmiUI extends JFrame implements ActionListener{
     JTextArea results;
     BmiLogic logic;
 
-    public BmiUI(String[] args) {
+    public BmiUI(String[] args, BmiLogic newLogic) {
 
-        logic = new BmiLogic();
+        logic = newLogic;
         calculate = new JButton("Calculate");
         exit = new JButton("Exit");
         heigthtxt = new JTextArea("Give heigth");
@@ -37,6 +37,9 @@ class BmiUI extends JFrame implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e) {
-        
+        if(e.getSource() == this.calculate) {
+            logic.setHeight(Integer.parseInt(this.heigthtxt.getText()));
+            logic.setWeight(Integer.parseInt(this.weigthtxt.getText()));
+        }
     }
 }
