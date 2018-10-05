@@ -29,15 +29,15 @@ public class MilesConverterUI extends Application{
 
     public static void initPane(GridPane pane) {
         Text text = new Text(10, 40, "Miles - Km converter");
-        text.setFont(new Font(40));
-        text.setTextAlignment(TextAlignment.CENTER);
         Button convertToMilesButton = new Button("Convert to miles!");
         Button convertToKmButton = new Button("Convert to kilometers!");
         Button exitButton = new Button("Exit");
         TextArea inputArea = new TextArea();
         TextArea resultArea = new TextArea();
-        inputArea.setPromptText("Miles/Kilometers");
-        resultArea.setPromptText("Result");
+
+        setTextAreaPrompts(inputArea, resultArea, "Miles/Kilometers", "Result");
+        text.setFont(new Font(40));
+        text.setTextAlignment(TextAlignment.CENTER);
 
         convertToMilesButton.setOnAction(new EventHandler<ActionEvent>(){
             @Override
@@ -65,10 +65,13 @@ public class MilesConverterUI extends Application{
         pane.add(exitButton, 3, 3, 1, 1);
         pane.add(inputArea, 0, 1, 1, 1);
         pane.add(resultArea, 0, 2, 1, 1);
-        //pane.setHalignment(convertToMilesButton, HPos.CENTER);
-        //pane.setHalignment(convertToKmButton, HPos.CENTER);
         pane.setVgap(20);
         pane.setPadding(new Insets(20));
+    }
+
+    public static void setTextAreaPrompts(TextArea ia, TextArea ra, String ip, String rp) {
+        ia.setPromptText(ip);
+        ra.setPromptText(rp);
     }
 
     public static void main(String[] args) {
