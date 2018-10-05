@@ -35,7 +35,7 @@ class BmiLogic {
 
     public void setHeight(double newHeight){
         if(newHeight > 0){
-            this.height = newWeigth;
+            this.height = newHeight;
         }
     }
 }
