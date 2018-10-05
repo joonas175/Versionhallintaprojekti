@@ -53,7 +53,7 @@ public class EurosToDollars{
         return returnVal;
     }
 
-    public static double convert(double sum) throws IOException, ProtocolException{
+    public static double convertEurToDollar(double sum) throws IOException, ProtocolException{
         double course = parseDoubleFromJSON(getCourse());
         return sum * course;
     }
