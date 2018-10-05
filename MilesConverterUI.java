@@ -1,6 +1,7 @@
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.HPos;
@@ -32,6 +33,7 @@ public class MilesConverterUI extends Application{
         text.setTextAlignment(TextAlignment.CENTER);
         Button convertToMilesButton = new Button("Convert to miles!");
         Button convertToKmButton = new Button("Convert to kilometers!");
+        Button exitButton = new Button("Exit");
         TextArea inputArea = new TextArea();
         TextArea resultArea = new TextArea();
         inputArea.setPromptText("Miles/Kilometers");
@@ -55,9 +57,12 @@ public class MilesConverterUI extends Application{
             }
         });
 
+        exitButton.setOnAction((e) -> Platform.exit());
+
         pane.add(text, 0, 0, 1, 1);
         pane.add(convertToMilesButton, 2, 3, 1, 1);
         pane.add(convertToKmButton, 1, 3, 1, 1);
+        pane.add(exitButton, 3, 3, 1, 1);
         pane.add(inputArea, 0, 1, 1, 1);
         pane.add(resultArea, 0, 2, 1, 1);
         //pane.setHalignment(convertToMilesButton, HPos.CENTER);
