@@ -20,10 +20,6 @@ public class EurosToDollars{
         
     }
 
-    public static void convert(){
-
-    }
-
     public static String getCourse() throws IOException, ProtocolException{
         
         URL converter = new URL("http://free.currencyconverterapi.com/api/v5/convert?q=EUR_USD&compact=y");
@@ -55,5 +51,10 @@ public class EurosToDollars{
             }
         }
         return returnVal;
+    }
+
+    public static double convert(double sum){
+        double course = parseDoubleFromJSON(getCourse());
+        return sum * course;
     }
 }
