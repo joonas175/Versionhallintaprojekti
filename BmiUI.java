@@ -1,28 +1,17 @@
-import javafx.scene.control.Button;
-import javafx.application.Application;
-import javafx.stage.Stage;
-import javafx.scene.Scene;
-import javafx.scene.layout.GridPane;
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import java.awt.event.*;
+import java.awt.BorderLayout;
 
-class BmiUI extends Application{
+class BmiUI extends JFrame implements ActionListener{
 
     public BmiUI(String[] args) {
-        Application.launch(args);
+        setTitle("BMI Calculator");
+        setSize(400, 400);
+        setVisible(true);
     }
 
-    @Override
-    public void start(Stage stage) {
-        GridPane pane = new GridPane();
-        setPane(pane);
-        Scene scene = new Scene(pane);
-        stage.setTitle("BMI Calculator");
-        stage.setScene(scene);
-        stage.sizeToScene();
-        stage.show();
-    }
-
-    public void setPane(GridPane pane) {
-        Button button = new Button("test");
-        pane.add(button, 0, 0, 1, 1);
+    public void actionPerformed(ActionEvent e) {
+        
     }
 }
