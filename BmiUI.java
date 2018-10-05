@@ -12,8 +12,11 @@ class BmiUI extends JFrame implements ActionListener{
     JTextArea heigthtxt;
     JTextArea weigthtxt;
     JTextArea results;
+    BmiLogic logic;
 
     public BmiUI(String[] args) {
+
+        logic = new BmiLogic();
         calculate = new JButton("Calculate");
         exit = new JButton("Exit");
         heigthtxt = new JTextArea("Give heigth");

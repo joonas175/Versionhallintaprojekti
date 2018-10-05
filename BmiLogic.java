@@ -4,11 +4,6 @@ class BmiLogic {
     private double height;
     private String BmiValue;
 
-    public BmiLogic(double newWeight, double newHeight) {
-        setHeight(newHeight);
-        setWeight(newWeight);
-    }
-
     public String generateBMI(){
         double result = 0;
         result = this.weight / ((this.height/100) * (this.height/100));
