@@ -4,11 +4,11 @@ class BmiLogic {
     private double height;
     private String BmiValue;
 
-    public String generateBMI(){
+    public void generateBMI(){
         double result = 0;
         result = this.weight / ((this.height/100) * (this.height/100));
         result = (double) Math.round(result * 100) / 100;
-        return "" + result;
+        BmiValue = Double.toString(result);
     }
 
     public String getBmiValue() {
