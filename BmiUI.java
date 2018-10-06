@@ -1,5 +1,4 @@
 import javax.swing.JFrame;
-import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
