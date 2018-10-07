@@ -1,6 +1,4 @@
 import java.awt.event.*;
-import javax.swing.JTextField;
-import javax.swing.JTextArea;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -10,6 +8,7 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
+import javafx.scene.control.TextField;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.layout.ColumnConstraints;
@@ -24,7 +23,7 @@ public class FahrenheitToCelcius extends Application implements ActionListener {
     String celciString;
     int fahrenInt;
     int celciInt;
-    JTextField textField;
+    TextField textField;
 
     /**
      * This method handles the construction of the window.
@@ -67,22 +66,23 @@ public class FahrenheitToCelcius extends Application implements ActionListener {
         celci.setTextAlignment(TextAlignment.CENTER);
         Button calculate = new Button("Calculate");
         
-        textField = new JTextField(5);
-        textField.addActionListener(this);
+        textField = new TextField("1");
+        //textField.addActionListener(this);
 
         pane.add(calc, 0, 0, 1, 1);
         pane.add(fahren, 1, 1, 1, 1);
         pane.add(celci, 1, 2, 1, 1);
         pane.add(calculate, 1, 3, 1, 1);
+        pane.add(textField, 2, 1);
         pane.setHalignment(calculate, HPos.CENTER);
         pane.setVgap(20);
         pane.setPadding(new Insets(20));
     }
 
-    public void actionPerformed(ActionEvent evt) {
+    public void actionPerformed(ActionEvent e) {
         String text = textField.getText();
         System.out.println(text);
-        textField.selectAll();
+        //textField.selectAll();
  
         //Make sure the new text is visible, even if there
         //was a selection in the text area.
