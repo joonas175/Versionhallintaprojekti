@@ -1,46 +1,29 @@
-import javax.swing.JFrame;
-import javax.swing.JTextArea;
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import java.awt.event.*;
+import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
-class BmiUI extends JFrame implements ActionListener{
+public class BmiUI extends Application {
 
-    JButton calculate;
-    JButton exit;
-    JTextArea heigthtxt;
-    JTextArea weigthtxt;
-    JTextArea resultstxt;
-    BmiLogic logic;
+    @Override public void start(Stage stage) {
+        GridPane pane = new GridPane();
+        makePane(pane);
+        Scene scene = new Scene(pane);
 
-    public BmiUI(String[] args, BmiLogic newLogic) {
-
-        logic = newLogic;
-        calculate = new JButton("Calculate");
-        exit = new JButton("Exit");
-        heigthtxt = new JTextArea("Give heigth");
-        weigthtxt = new JTextArea("Give weigth");
-        resultstxt = new JTextArea("Results: ");
-        setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
-        add(heigthtxt);
-        add(weigthtxt);
-        add(resultstxt);
-        add(calculate);
-        add(exit);
-        calculate.addActionListener(this);
-        exit.addActionListener(this);
-        setTitle("BMI Calculator");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(400, 400);
-        setVisible(true);
+        stage.setTitle("BMI Calculator"); 
+        stage.setScene(scene); 
+        stage.sizeToScene(); 
+        stage.show(); 
     }
 
-    public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == this.calculate) {
-            logic.setHeight(Integer.parseInt(this.heigthtxt.getText()));
-            logic.setWeight(Integer.parseInt(this.weigthtxt.getText()));
-            this.logic.generateBMI();
-            this.resultstxt.setText("Result: " + this.logic.getBmiValue());
-        }
+    public static void makePane(GridPane pane) {
+
+    }
+
+    public static void main(String[] args) {
+        Application.launch(args);
     }
 }
