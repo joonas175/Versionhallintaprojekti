@@ -1,3 +1,6 @@
+import java.awt.event.*;
+import javax.swing.JTextField;
+import javax.swing.JTextArea;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -16,11 +19,12 @@ import javafx.scene.layout.ColumnConstraints;
  * @version 2018.1002
  *
  */
-public class FahrenheitToCelcius extends Application{
+public class FahrenheitToCelcius extends Application implements ActionListener {
     String fahrenString;
     String celciString;
     int fahrenInt;
     int celciInt;
+    JTextField textField;
 
     /**
      * This method handles the construction of the window.
@@ -51,7 +55,7 @@ public class FahrenheitToCelcius extends Application{
      * 
      * @param pane GridPane, where the elements will be added
      */
-    public static void initializePane(GridPane pane){
+    public void initializePane(GridPane pane){
         Text calc = new Text(10, 40, "Calculate fahrenheits to celcius");
         calc.setFont(new Font(30));
         calc.setTextAlignment(TextAlignment.CENTER);
@@ -62,6 +66,10 @@ public class FahrenheitToCelcius extends Application{
         celci.setFont(new Font(20));
         celci.setTextAlignment(TextAlignment.CENTER);
         Button calculate = new Button("Calculate");
+        
+        textField = new JTextField(5);
+        textField.addActionListener(this);
+
         pane.add(calc, 0, 0, 1, 1);
         pane.add(fahren, 1, 1, 1, 1);
         pane.add(celci, 1, 2, 1, 1);
@@ -69,6 +77,16 @@ public class FahrenheitToCelcius extends Application{
         pane.setHalignment(calculate, HPos.CENTER);
         pane.setVgap(20);
         pane.setPadding(new Insets(20));
+    }
+
+    public void actionPerformed(ActionEvent evt) {
+        String text = textField.getText();
+        System.out.println(text);
+        textField.selectAll();
+ 
+        //Make sure the new text is visible, even if there
+        //was a selection in the text area.
+        //textArea.setCaretPosition(textArea.getDocument().getLength());
     }
 
     public static void main(String[] args){
