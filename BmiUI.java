@@ -1,4 +1,5 @@
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
@@ -43,13 +44,7 @@ public class BmiUI extends Application {
         });
 
         Button exitBtn = new Button("Exit");
-
-        exitBtn.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
-            public void handle(ActionEvent event) {
-                
-            }
-        });
+        exitBtn.setOnAction(e -> Platform.exit());
 
         pane.add(heighttxt, 0,0,2,1);
         pane.add(heightInp, 0,1,2,1);
