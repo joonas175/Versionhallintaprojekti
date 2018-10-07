@@ -19,6 +19,7 @@ import javafx.scene.layout.ColumnConstraints;
  *
  */
 public class FahrenheitToCelcius extends Application {
+    GridPane pane;
     String fahrenString;
     String celciString;
     int fahrenInt;
@@ -35,12 +36,13 @@ public class FahrenheitToCelcius extends Application {
      */
     
     @Override public void start(Stage stage) {
-        GridPane pane = new GridPane();
+        pane = new GridPane();
         ColumnConstraints column1 = new ColumnConstraints(50);
-        ColumnConstraints column2 = new ColumnConstraints(325);
+        ColumnConstraints column2 = new ColumnConstraints(200);
         ColumnConstraints column3 = new ColumnConstraints(50);
-        pane.getColumnConstraints().addAll(column1, column2, column3);
-        initializePane(pane);
+        ColumnConstraints column4 = new ColumnConstraints(100);
+        pane.getColumnConstraints().addAll(column1, column2, column3, column4);
+        initializePane();
         Scene scene = new Scene(pane);
         
         stage.setTitle("Fahrenheit to Celcius converter"); 
@@ -56,7 +58,7 @@ public class FahrenheitToCelcius extends Application {
      * 
      * @param pane GridPane, where the elements will be added
      */
-    public void initializePane(GridPane pane){
+    public void initializePane(){
         Text calc = new Text(10, 40, "Calculate fahrenheits to celcius");
         calc.setFont(new Font(30));
         calc.setTextAlignment(TextAlignment.CENTER);
@@ -66,6 +68,7 @@ public class FahrenheitToCelcius extends Application {
         Text celci = new Text(10, 40, "Celcius:");
         celci.setFont(new Font(20));
         celci.setTextAlignment(TextAlignment.CENTER);
+
         Button calculate = new Button("Calculate");
         calculate.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
@@ -75,14 +78,13 @@ public class FahrenheitToCelcius extends Application {
         
         textFieldF = new TextField("1");
         textFieldC = new TextField("-17.22");
-        //textFieldF.addActionListener(this);
 
         pane.add(calc, 0, 0, 1, 1);
         pane.add(fahren, 1, 1, 1, 1);
         pane.add(celci, 1, 2, 1, 1);
-        pane.add(calculate, 1, 3, 1, 1);
-        pane.add(textFieldF, 2, 1);
-        pane.add(textFieldC, 2, 2);
+        pane.add(calculate, 3, 3, 1, 1);
+        pane.add(textFieldF, 3, 1);
+        pane.add(textFieldC, 3, 2);
         pane.setHalignment(calculate, HPos.CENTER);
         pane.setVgap(20);
         pane.setPadding(new Insets(20));
@@ -94,7 +96,9 @@ public class FahrenheitToCelcius extends Application {
             fahrenInt = Integer.parseInt(fahrenString);
         }
         catch (NumberFormatException e) {
-            error = new Text("not valid numbers");
+            error = new Text(10, 40, "not valid numbers");
+            error.setFont(new Font(10));
+            pane.add(error, 1, 3, 1, 1);
         }
 
         celciInt = fahrenToCelc(fahrenInt);
