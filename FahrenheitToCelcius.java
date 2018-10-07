@@ -25,6 +25,7 @@ public class FahrenheitToCelcius extends Application {
     int celciInt;
     TextField textFieldF;
     TextField textFieldC;
+    Text error;
 
     /**
      * This method handles the construction of the window.
@@ -68,7 +69,7 @@ public class FahrenheitToCelcius extends Application {
         Button calculate = new Button("Calculate");
         calculate.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
-                System.out.println("Accepted");
+                calculateButtonEvent();
             }
         });
         
@@ -87,14 +88,22 @@ public class FahrenheitToCelcius extends Application {
         pane.setPadding(new Insets(20));
     }
 
-    public void handle(ActionEvent e) {
-        String text = textFieldF.getText();
-        System.out.println(text);
-        //textField.selectAll();
- 
-        //Make sure the new text is visible, even if there
-        //was a selection in the text area.
-        //textArea.setCaretPosition(textArea.getDocument().getLength());
+    public void calculateButtonEvent() {
+        String fahrenString = textFieldF.getText();
+        try {
+            fahrenInt = Integer.parseInt(fahrenString);
+        }
+        catch (NumberFormatException e) {
+            error = new Text("not valid numbers");
+        }
+
+        celciInt = fahrenToCelc(fahrenInt);
+        textFieldC.setText(Integer.toString(celciInt));
+
+    }
+
+    public int fahrenToCelc(int f) {
+        return (f-32) / 9 * 5;
     }
 
     public static void main(String[] args){
