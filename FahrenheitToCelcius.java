@@ -1,4 +1,4 @@
-import java.awt.event.*;
+import javafx.event.*;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -18,12 +18,13 @@ import javafx.scene.layout.ColumnConstraints;
  * @version 2018.1002
  *
  */
-public class FahrenheitToCelcius extends Application implements ActionListener {
+public class FahrenheitToCelcius extends Application {
     String fahrenString;
     String celciString;
     int fahrenInt;
     int celciInt;
-    TextField textField;
+    TextField textFieldF;
+    TextField textFieldC;
 
     /**
      * This method handles the construction of the window.
@@ -65,22 +66,29 @@ public class FahrenheitToCelcius extends Application implements ActionListener {
         celci.setFont(new Font(20));
         celci.setTextAlignment(TextAlignment.CENTER);
         Button calculate = new Button("Calculate");
+        calculate.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent e) {
+                System.out.println("Accepted");
+            }
+        });
         
-        textField = new TextField("1");
-        //textField.addActionListener(this);
+        textFieldF = new TextField("1");
+        textFieldC = new TextField("-17.22");
+        //textFieldF.addActionListener(this);
 
         pane.add(calc, 0, 0, 1, 1);
         pane.add(fahren, 1, 1, 1, 1);
         pane.add(celci, 1, 2, 1, 1);
         pane.add(calculate, 1, 3, 1, 1);
-        pane.add(textField, 2, 1);
+        pane.add(textFieldF, 2, 1);
+        pane.add(textFieldC, 2, 2);
         pane.setHalignment(calculate, HPos.CENTER);
         pane.setVgap(20);
         pane.setPadding(new Insets(20));
     }
 
-    public void actionPerformed(ActionEvent e) {
-        String text = textField.getText();
+    public void handle(ActionEvent e) {
+        String text = textFieldF.getText();
         System.out.println(text);
         //textField.selectAll();
  
