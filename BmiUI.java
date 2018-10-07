@@ -14,7 +14,8 @@ public class BmiUI extends Application {
 
     @Override public void start(Stage stage) {
         GridPane pane = new GridPane();
-        makePane(pane);
+        BmiLogic logic = new BmiLogic();
+        makePane(pane, logic);
         Scene scene = new Scene(pane);
 
         stage.setTitle("BMI Calculator"); 
@@ -23,7 +24,7 @@ public class BmiUI extends Application {
         stage.show(); 
     }
 
-    public static void makePane(GridPane pane) {
+    public static void makePane(GridPane pane, BmiLogic logic) {
         Text heighttxt = new Text("Height: ");
         Text weighttxt = new Text("Weight: ");
         Text result = new Text("Result: ");
@@ -34,7 +35,10 @@ public class BmiUI extends Application {
         calculateBtn.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event) {
-                
+                logic.setHeight(Integer.parseInt(heightInp.getText()));
+                logic.setWeight(Integer.parseInt(weightInp.getText()));
+                logic.generateBMI();
+                result.setText("Result: " + logic.getBmiValue());
             }
         });
 
