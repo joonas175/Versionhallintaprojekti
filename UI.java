@@ -52,20 +52,9 @@ public class UI extends Application{
         text.setFont(new Font(40));
         text.setTextAlignment(TextAlignment.CENTER);
         Button bmiButton = new Button("BMI Calculator");
-        bmiButton.setOnAction(new EventHandler<ActionEvent>(){
-        
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Test");
-            }
-        });
+        bmiButton.setOnAction((event) -> System.out.println("test"));
         Button mileToKmButton = new Button("Miles to Kilometers converter");
-        mileToKmButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Test");
-            }
-        });
+        mileToKmButton.setOnAction((event) -> System.out.println("test"));
         pane.add(text, 0, 0, 1, 1);
         pane.add(bmiButton, 0, 1, 1, 1);
         pane.add(mileToKmButton, 0, 2, 1, 1);
