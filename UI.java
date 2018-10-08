@@ -63,6 +63,11 @@ public class UI extends Application{
         pane.add(mileToKmButton, 0, 2, 1, 1);
         pane.setHalignment(mileToKmButton, HPos.CENTER);
 
+        Button fahrenheitToCelciusButton = new Button("Fahrenheit to celcius converter");
+        fahrenheitToCelciusButton.setOnAction((event) -> new FahrenheitToCelcius().start(new Stage()));
+        pane.add(fahrenheitToCelciusButton, 0, 3, 1, 1);
+        pane.setHalignment(fahrenheitToCelciusButton, HPos.CENTER);
+
         pane.setVgap(20);
         pane.setPadding(new Insets(20));
     }
