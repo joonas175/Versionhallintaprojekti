@@ -12,6 +12,8 @@ import javafx.scene.control.TextField;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.layout.ColumnConstraints;
+import java.text.NumberFormat;
+import java.text.DecimalFormat;
 /** 
  * 
  * @author Anna Mälkiä
@@ -102,7 +104,9 @@ public class FahrenheitToCelcius extends Application {
         }
 
         celciD = fahrenToCelc(fahrenD);
-        textFieldC.setText(Double.toString(celciD));
+
+        DecimalFormat formatter = new DecimalFormat("#0.00");
+        textFieldC.setText(formatter.format(celciD));
 
     }
 
