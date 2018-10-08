@@ -51,15 +51,18 @@ public class UI extends Application{
         Text text = new Text(10, 40, "Pick a feature");
         text.setFont(new Font(40));
         text.setTextAlignment(TextAlignment.CENTER);
+        pane.add(text, 0, 0, 1, 1);
+
         Button bmiButton = new Button("BMI Calculator");
         bmiButton.setOnAction((event) -> System.out.println("test"));
+        pane.add(bmiButton, 0, 1, 1, 1);
+        pane.setHalignment(bmiButton, HPos.CENTER);
+
         Button mileToKmButton = new Button("Miles to Kilometers converter");
         mileToKmButton.setOnAction((event) -> new MilesConverterUI().start(new Stage()));
-        pane.add(text, 0, 0, 1, 1);
-        pane.add(bmiButton, 0, 1, 1, 1);
         pane.add(mileToKmButton, 0, 2, 1, 1);
-        pane.setHalignment(bmiButton, HPos.CENTER);
         pane.setHalignment(mileToKmButton, HPos.CENTER);
+
         pane.setVgap(20);
         pane.setPadding(new Insets(20));
     }
@@ -67,5 +70,5 @@ public class UI extends Application{
     public static void main(String[] args){
         Application.launch(args);
     }
-    
+
 }
