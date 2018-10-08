@@ -54,7 +54,7 @@ public class UI extends Application{
         Button bmiButton = new Button("BMI Calculator");
         bmiButton.setOnAction((event) -> System.out.println("test"));
         Button mileToKmButton = new Button("Miles to Kilometers converter");
-        mileToKmButton.setOnAction((event) -> System.out.println("test"));
+        mileToKmButton.setOnAction((event) -> new MilesConverterUI().start(new Stage()));
         pane.add(text, 0, 0, 1, 1);
         pane.add(bmiButton, 0, 1, 1, 1);
         pane.add(mileToKmButton, 0, 2, 1, 1);
