@@ -22,8 +22,8 @@ public class FahrenheitToCelcius extends Application {
     GridPane pane;
     String fahrenString;
     String celciString;
-    int fahrenInt;
-    int celciInt;
+    double fahrenD;
+    double celciD;
     TextField textFieldF;
     TextField textFieldC;
     Text error;
@@ -93,7 +93,7 @@ public class FahrenheitToCelcius extends Application {
     public void calculateButtonEvent() {
         String fahrenString = textFieldF.getText();
         try {
-            fahrenInt = Integer.parseInt(fahrenString);
+            fahrenD = Double.parseDouble(fahrenString);
         }
         catch (NumberFormatException e) {
             error = new Text(10, 40, "not valid numbers");
@@ -101,13 +101,13 @@ public class FahrenheitToCelcius extends Application {
             pane.add(error, 1, 3, 1, 1);
         }
 
-        celciInt = fahrenToCelc(fahrenInt);
-        textFieldC.setText(Integer.toString(celciInt));
+        celciD = fahrenToCelc(fahrenD);
+        textFieldC.setText(Double.toString(celciD));
 
     }
 
-    public int fahrenToCelc(int f) {
-        return (f-32) / 9 * 5;
+    public double fahrenToCelc(double f) {
+        return (f-32) / 9 * 5.0;
     }
 
     public static void main(String[] args){
