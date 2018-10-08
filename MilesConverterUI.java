@@ -13,8 +13,21 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 
+/**
+ * Interface of the Miles-To-Kilometers converter.
+ * 
+ * This is interface for the converter. Start method creates a new window which houses the converter.
+ * @author Lauri Laiho
+ * @since 08.10.2018
+ */
 public class MilesConverterUI extends Application{
 
+    /**
+     * This method creates the window for the converter
+     * 
+     * Method is invoked to create the window, with which the user can interact with.
+     * @param stage Mandatory by Application-class
+     */
     @Override
     public void start(Stage primaryStage) {
         GridPane pane = new GridPane();
@@ -27,6 +40,13 @@ public class MilesConverterUI extends Application{
         primaryStage.show();
     }
 
+    /**
+     * Initializes the given GridPane.
+     * 
+     * Adds and initializes all needed elements, like buttons and text.
+     * 
+     * @param pane GridPane, where the elements will be added
+     */
     public static void initPane(GridPane pane) {
         Text text = new Text(10, 40, "Miles - Km converter");
         Button convertToMilesButton = new Button("Convert to miles!");
@@ -69,6 +89,16 @@ public class MilesConverterUI extends Application{
         pane.setPadding(new Insets(20));
     }
 
+    /**
+     * Adds given Strings as text prompts to given TextAreas.
+     * 
+     * Adds given Strings as text prompts to given TextAreas.
+     * 
+     * @param ia TextArea, where the input prompt will be added
+     * @param ra TextArea, where the result prompt will be added
+     * @param ip String, which is added as a prompt to the input area
+     * @param rp String, which is added as a prompt to the result area
+     */
     public static void setTextAreaPrompts(TextArea ia, TextArea ra, String ip, String rp) {
         ia.setPromptText(ip);
         ra.setPromptText(rp);
