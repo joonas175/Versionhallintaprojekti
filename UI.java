@@ -54,7 +54,7 @@ public class UI extends Application{
         pane.add(text, 0, 0, 1, 1);
 
         Button bmiButton = new Button("BMI Calculator");
-        bmiButton.setOnAction((event) -> System.out.println("test"));
+        bmiButton.setOnAction((event) ->new BmiUI().start(new Stage()));
         pane.add(bmiButton, 0, 1, 1, 1);
         pane.setHalignment(bmiButton, HPos.CENTER);
 
