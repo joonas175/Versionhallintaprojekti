@@ -97,6 +97,10 @@ public class FahrenheitToCelcius extends Application {
         String fahrenString = textFieldF.getText();
         try {
             fahrenD = Double.parseDouble(fahrenString);
+            if (showError) {
+                showError = false;
+                pane.getChildren().remove(error);
+            }
         }
         catch (NumberFormatException e) {
             error = new Text(10, 40, "not valid numbers");
