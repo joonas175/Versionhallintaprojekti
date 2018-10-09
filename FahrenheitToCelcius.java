@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
+import javafx.scene.paint.*;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
@@ -29,6 +30,7 @@ public class FahrenheitToCelcius extends Application {
     TextField textFieldF;
     TextField textFieldC;
     Text error;
+    boolean showError = false;
 
     /**
      * This method handles the construction of the window.
@@ -71,6 +73,10 @@ public class FahrenheitToCelcius extends Application {
         celci.setFont(new Font(20));
         celci.setTextAlignment(TextAlignment.CENTER);
 
+        error = new Text(10, 40, "not valid numbers");
+        error.setFont(new Font(10));
+        error.setFill(Color.WHITESMOKE);
+
         Button calculate = new Button("Calculate");
         calculate.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
@@ -87,6 +93,7 @@ public class FahrenheitToCelcius extends Application {
         pane.add(calculate, 3, 3, 1, 1);
         pane.add(textFieldF, 3, 1);
         pane.add(textFieldC, 3, 2);
+        pane.add(error, 1, 3, 1, 1);
         pane.setHalignment(calculate, HPos.CENTER);
         pane.setVgap(20);
         pane.setPadding(new Insets(20));
@@ -96,15 +103,15 @@ public class FahrenheitToCelcius extends Application {
         String fahrenString = textFieldF.getText();
         try {
             fahrenD = Double.parseDouble(fahrenString);
+            showError = false;
+            error.setFill(Color.WHITESMOKE);
         }
         catch (NumberFormatException e) {
-            error = new Text(10, 40, "not valid numbers");
-            error.setFont(new Font(10));
-            pane.add(error, 1, 3, 1, 1);
+            error.setFill(Color.RED);
+            showError = true;
         }
 
         celciD = fahrenToCelc(fahrenD);
-
         DecimalFormat formatter = new DecimalFormat("#0.00");
         textFieldC.setText(formatter.format(celciD));
 
