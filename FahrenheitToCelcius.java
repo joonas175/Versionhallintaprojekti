@@ -29,6 +29,7 @@ public class FahrenheitToCelcius extends Application {
     TextField textFieldF;
     TextField textFieldC;
     Text error;
+    boolean showError = false;
 
     /**
      * This method handles the construction of the window.
@@ -101,10 +102,10 @@ public class FahrenheitToCelcius extends Application {
             error = new Text(10, 40, "not valid numbers");
             error.setFont(new Font(10));
             pane.add(error, 1, 3, 1, 1);
+            showError = true;
         }
 
         celciD = fahrenToCelc(fahrenD);
-
         DecimalFormat formatter = new DecimalFormat("#0.00");
         textFieldC.setText(formatter.format(celciD));
 
