@@ -29,6 +29,9 @@ public class EurosToDollarsUI extends Application {
     GridPane pane;
     TextField textField;
     TextField textFieldOutput;
+    RadioButton button1;
+    RadioButton button2;
+    ToggleGroup group;
 
 
     
@@ -71,12 +74,23 @@ public class EurosToDollarsUI extends Application {
         textField = new TextField("1");
         textFieldOutput = new TextField("Output");
 
+        group = new ToggleGroup();
+        button1 = new RadioButton("From euros");
+        button1.setToggleGroup(group);
+        button1.setSelected(true);
+        button2 = new RadioButton("From dollars");
+        button2.setToggleGroup(group);
+
         pane.add(calc, 0, 0, 1, 1);
         pane.add(euros, 1, 1, 1, 1);
         pane.add(dollars, 1, 2, 1, 1);
-        pane.add(calculate, 3, 3, 1, 1);
+
+        pane.add(calculate, 3, 4, 1, 1);
+
         pane.add(textField, 3, 1, 2, 1);
         pane.add(textFieldOutput, 3, 2, 2, 1);
+        pane.add(button1, 1, 3);
+        pane.add(button2, 2, 3, 2, 1);
         pane.setHalignment(calculate, HPos.CENTER);
         pane.setVgap(20);
         pane.setPadding(new Insets(20));
