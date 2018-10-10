@@ -21,8 +21,8 @@ import java.text.DecimalFormat;
 
 public class EurosToDollarsUI extends Application {
     GridPane pane;
-    TextField textFieldF;
-    TextField textFieldC;
+    TextField textField;
+    TextField textFieldOutput;
     Text error;
 
 
@@ -67,15 +67,15 @@ public class EurosToDollarsUI extends Application {
             }
         });
         
-        textFieldF = new TextField("1");
-        textFieldC = new TextField("-17.22");
+        textField = new TextField("1");
+        textFieldOutput = new TextField("-17.22");
 
         pane.add(calc, 0, 0, 1, 1);
         pane.add(fahren, 1, 1, 1, 1);
         pane.add(celci, 1, 2, 1, 1);
         pane.add(calculate, 3, 3, 1, 1);
-        pane.add(textFieldF, 3, 1);
-        pane.add(textFieldC, 3, 2);
+        pane.add(textField, 3, 1);
+        pane.add(textFieldOutput, 3, 2);
         pane.add(error, 1, 3, 1, 1);
         pane.setHalignment(calculate, HPos.CENTER);
         pane.setVgap(20);
