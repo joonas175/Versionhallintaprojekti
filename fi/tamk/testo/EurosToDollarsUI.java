@@ -10,8 +10,10 @@ import javafx.scene.text.TextAlignment;
 import javafx.scene.paint.*;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.layout.GridPane;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.layout.ColumnConstraints;
@@ -27,7 +29,6 @@ public class EurosToDollarsUI extends Application {
     GridPane pane;
     TextField textField;
     TextField textFieldOutput;
-    Text error;
 
 
     
@@ -60,10 +61,6 @@ public class EurosToDollarsUI extends Application {
         dollars.setFont(new Font(20));
         dollars.setTextAlignment(TextAlignment.CENTER);
 
-        error = new Text(10, 40, "not valid numbers");
-        error.setFont(new Font(10));
-        error.setFill(Color.WHITESMOKE);
-
         Button calculate = new Button("Calculate");
         calculate.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
@@ -80,7 +77,6 @@ public class EurosToDollarsUI extends Application {
         pane.add(calculate, 3, 3, 1, 1);
         pane.add(textField, 3, 1, 2, 1);
         pane.add(textFieldOutput, 3, 2, 2, 1);
-        pane.add(error, 1, 3, 1, 1);
         pane.setHalignment(calculate, HPos.CENTER);
         pane.setVgap(20);
         pane.setPadding(new Insets(20));
