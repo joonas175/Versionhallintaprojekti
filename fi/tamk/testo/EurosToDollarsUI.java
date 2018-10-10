@@ -16,6 +16,10 @@ import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.layout.ColumnConstraints;
 import java.text.NumberFormat;
+
+import fi.tamk.testo.EurosToDollars;
+
+import java.io.IOException;
 import java.text.DecimalFormat;
 
 
@@ -68,14 +72,14 @@ public class EurosToDollarsUI extends Application {
         });
         
         textField = new TextField("1");
-        textFieldOutput = new TextField("-17.22");
+        textFieldOutput = new TextField("Output");
 
         pane.add(calc, 0, 0, 1, 1);
         pane.add(fahren, 1, 1, 1, 1);
         pane.add(celci, 1, 2, 1, 1);
         pane.add(calculate, 3, 3, 1, 1);
-        pane.add(textField, 3, 1);
-        pane.add(textFieldOutput, 3, 2);
+        pane.add(textField, 3, 1, 2, 1);
+        pane.add(textFieldOutput, 3, 2, 2, 1);
         pane.add(error, 1, 3, 1, 1);
         pane.setHalignment(calculate, HPos.CENTER);
         pane.setVgap(20);
@@ -83,7 +87,12 @@ public class EurosToDollarsUI extends Application {
     }
 
     public void calculateButtonEvent() {
-
+        try{
+            textFieldOutput.setText(EurosToDollars.convertEURToUSD(Integer.parseInt(textField.getText())) + " USD");
+        } catch(Exception e){
+            textFieldOutput.setText("Error");
+        }
+        
 
     }
 
