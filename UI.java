@@ -11,7 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-import fi.tamk.testo.EurosToDollars;
+import fi.tamk.testo.EurosToDollarsUI;
 /** 
  * Main menu of the application. 
  * 
@@ -68,6 +68,11 @@ public class UI extends Application{
         fahrenheitToCelciusButton.setOnAction((event) -> new FahrenheitToCelcius().start(new Stage()));
         pane.add(fahrenheitToCelciusButton, 0, 3, 1, 1);
         pane.setHalignment(fahrenheitToCelciusButton, HPos.CENTER);
+
+        Button eurosToDollars = new Button("Euros to Dollars converter");
+        eurosToDollars.setOnAction((event) -> new EurosToDollarsUI().start(new Stage()));
+        pane.add(eurosToDollars, 0, 4, 1, 1);
+        pane.setHalignment(eurosToDollars, HPos.CENTER);
 
         pane.setVgap(20);
         pane.setPadding(new Insets(20));
