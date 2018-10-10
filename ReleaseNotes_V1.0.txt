@@ -1,6 +1,0 @@
-RELEASE NOTES V1.0
-Release date 9.10.2018
-
--Added BMI calculator
--Added Miles to Kilometers converter
--Added Fahrenheit to celcius converter

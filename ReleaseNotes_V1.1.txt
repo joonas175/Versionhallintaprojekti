@@ -1,0 +1,13 @@
+RELEASE NOTES V1.1
+Release date 10.10.2018
+
+-Added currency conversion app (EUR and USD)
+
+______________________________________________________
+
+RELEASE NOTES V1.0
+Release date 9.10.2018
+
+-Added BMI calculator
+-Added Miles to Kilometers converter
+-Added Fahrenheit to celcius converter
