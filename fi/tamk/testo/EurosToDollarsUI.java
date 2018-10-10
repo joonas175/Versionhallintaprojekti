@@ -97,12 +97,19 @@ public class EurosToDollarsUI extends Application {
     }
 
     public void calculateButtonEvent() {
-        try{
-            textFieldOutput.setText(EurosToDollars.convertEURToUSD(Integer.parseInt(textField.getText())) + " USD");
-        } catch(Exception e){
-            textFieldOutput.setText("Error");
+        if(button1.isSelected()){
+            try{
+                textFieldOutput.setText(EurosToDollars.convertEURToUSD(Integer.parseInt(textField.getText())) + " USD");
+            } catch(Exception e){
+                textFieldOutput.setText("Error");
+            }
+        } else if(button2.isSelected()){
+            try{
+                textFieldOutput.setText(EurosToDollars.convertUSDToEUR(Integer.parseInt(textField.getText())) + " EUR");
+            } catch(Exception e){
+                textFieldOutput.setText("Error");
+            }
         }
-        
 
     }
 
