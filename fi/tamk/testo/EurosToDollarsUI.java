@@ -53,12 +53,12 @@ public class EurosToDollarsUI extends Application {
         Text calc = new Text(10, 40, "Convert euros to dollars");
         calc.setFont(new Font(30));
         calc.setTextAlignment(TextAlignment.CENTER);
-        Text fahren = new Text(10, 40, "Euros:");
-        fahren.setFont(new Font(20));
-        fahren.setTextAlignment(TextAlignment.CENTER);
-        Text celci = new Text(10, 40, "Dollars: ");
-        celci.setFont(new Font(20));
-        celci.setTextAlignment(TextAlignment.CENTER);
+        Text euros = new Text(10, 40, "Euros:");
+        euros.setFont(new Font(20));
+        euros.setTextAlignment(TextAlignment.CENTER);
+        Text dollars = new Text(10, 40, "Dollars: ");
+        dollars.setFont(new Font(20));
+        dollars.setTextAlignment(TextAlignment.CENTER);
 
         error = new Text(10, 40, "not valid numbers");
         error.setFont(new Font(10));
@@ -75,8 +75,8 @@ public class EurosToDollarsUI extends Application {
         textFieldOutput = new TextField("Output");
 
         pane.add(calc, 0, 0, 1, 1);
-        pane.add(fahren, 1, 1, 1, 1);
-        pane.add(celci, 1, 2, 1, 1);
+        pane.add(euros, 1, 1, 1, 1);
+        pane.add(dollars, 1, 2, 1, 1);
         pane.add(calculate, 3, 3, 1, 1);
         pane.add(textField, 3, 1, 2, 1);
         pane.add(textFieldOutput, 3, 2, 2, 1);
